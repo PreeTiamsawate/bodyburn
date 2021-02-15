@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Burn Calculator</title>
+    <link rel="stylesheet" href="bodyburn.css">
+    <script src="https://kit.fontawesome.com/009dadef4a.js" crossorigin="anonymous"></script>
+</head>
+<body> 
+    <header><h1>Body Burn.Net</h1></header>
+    <main id="mainContainer">
+        <section id="formContainer">
+            <div>
+                <button id="metricBtn" class="unitBtn active">Metric Units</button>
+                <button id="usBtn" class="unitBtn">US Units</button>
+            </div>
+            
+            <form id="metricForm" action="">
+                <p class="instruction"><b>Instruction: </b>Please insert your body information and press the result button to see your BMI, BMR and required amount of protein.</p>
+                <div class="formspace">
+                    <span class="yourSex">Your sex: </span>
+                    <input type="radio" name="metricSex" id="metricMale" value="male" checked>
+                    <label for="metricSex" class="sexLabel">Male</label>
+                    <input type="radio" name="metricSex" id="metricFemale" value="female">
+                    <label for="metricSex" class="sexLabel">Female</label>
+                </div>
+                <div class="formspace">
+                    <label for="metricAge">Age(years): </label>
+                    <input type="number" name="metricAge" class="inputBox ageInput"  max="80" min="10" placeholder="Your age in years" required>    
+                </div>
+                <div id="metricValues">
+                    <div class="formspace">
+                        <label for="metricHeight">Height(cm):</label>
+                        <input type="number" name="metricHeight" class="inputBox" id="heightCmInput" max="250" min="80" placeholder="Your height in cm" required>
+                    </div>
+                    <div class="formspace">
+                        <label for="metricWeight">Weight(kg): </label>
+                        <input type="number" name="metricWeight" class="inputBox" id="weightKgInput" max="200" min="30" placeholder="Your weight in kg" required>
+                    </div>
+                </div>
+                <div class="formspace">
+                    <span class="resultUnit">Result in: </span>
+                    <input type="radio" name="resultUnit1" id="kcalResult1" value="kCal" checked>
+                    <label for="resultUnit1" class="sexLabel">kCal</label>
+                    <input type="radio" name="resultUnit1" id="kJResult1" value="kJ">
+                    <label for="resultUnit1" class="sexLabel">kJ</label>
+                </div>
+                <div>
+                    <button class="resultBtn" id='' type="submit">Get Results!</button>
+                    <button type="button" class="resetBtn"><i class="fas fa-undo-alt"></i></button>
+                </div>    
+            </form>
+            
+
+
+            <form id="usForm" action="">
+                <p class="instruction"><b>Instruction: </b>Please insert your body information and press the result button to see your BMI, BMR and required amount of protein.</p>
+                <div class="formspace">
+                    <span class="yourSex">Your sex: </span>
+                    <input type="radio" name="usSex" id="usMale" value="male" checked>
+                    <label for="usSex" class="sexLabel">Male</label>
+                    <input type="radio" name="usSex" id="usFemale" value="female">
+                    <label for="usSex" class="sexLabel">Female</label>
+                </div>
+                <div class="formspace">
+                    <label for="age">Age(years): </label>
+                    <input type="number" name="usAge" class="inputBox ageInput"  max="80" min="10" placeholder="Your age in years" required>    
+                </div>
+               
+                <div id="usValues">
+                    <div class="formspace">
+                        <label for="heightFT">Height(ft.in):</label>
+                        <input type="number" name="heightFT" class="inputBox" id="heightFtInput" max="8" min="3" placeholder="feet" required>
+                        <input type="number" name="heightIn" class="inputBox" id="heightIncInput" max="11" min="0" placeholder="inches" required>
+                    </div>
+                    <div class="formspace">
+                        <label for="weightLbs">Weight(lbs): </label>
+                        <input type="number" name="weightLbs" class="inputBox" id="weightLbInput" max="450" min="60" placeholder="Your weight in pounds" required>
+                    </div>
+                </div>
+                <div class="formspace">
+                    <span class="resultUnit">Result in: </span>
+                    <input type="radio" name="resultUnit2" id="kcalResult2" value="kCal" checked>
+                    <label for="resultUnit2" class="sexLabel">kCal</label>
+                    <input type="radio" name="resultUnit2" id="kJResult2" value="kJ">
+                    <label for="resultUnit2" class="sexLabel">kJ</label>
+                </div>
+                <div>
+                    <button class="resultBtn" id='' type="submit">Get Results!</button>
+                    <button type="button" class="resetBtn"><i class="fas fa-undo-alt"></i></button>
+                </div>    
+            </form>
+        </section>
+
+        <section id="resultContainer">
+            
+                <p id="resultTip"><b>Tip: </b>Your calculted BMI, BMR and required amount of protein are provided below. Further analysis is under development.</p>
+                <div id="results">
+                    <p>Your BMI: <span id="bmiResult">### </span><span> kg/m<sup>2</sup> </span></p>
+                    <p>Your BMR: <span id="bmrResult">### </span></p>
+                    <p>Your req Protein: <span id="proteinResult">### </span></p>
+                </div>    
+        </section>
+
+    </main>
+    
+    <script src="bodyburn.js"></script>
+    
+</body>
+</html>
